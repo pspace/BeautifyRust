@@ -59,8 +59,10 @@ class BeautifyRustCommand(sublime_plugin.TextCommand):
         if rustfmt_bin is None:
             return sublime.error_message(
                 "Beautify rust: can not find {0} in path.".format(self.settings.get("rustfmt", "rustfmt")))
-        cmd_list = [rustfmt_bin, self.filename, self.settings.get("args", [])
+        cmd_list = [rustfmt_bin, self.filename]
+        cmd_list.extend(self.settings.get("args", []))
         self.save_viewport_state()
+        
         (exit_code, err) = self.pipe(cmd_list)
         if exit_code != 0 or (err != "" and not err.startswith("Using rustfmt")):
             self.view.replace(edit, buffer_region, buffer_text)
