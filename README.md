@@ -6,7 +6,7 @@ A binding for Sublime Text to the [Rustfmt](https://github.com/rust-lang-nursery
 ### Requirements
 
 1. Clone and build the [rustfmt](https://github.com/rust-lang-nursery/rustfmt)
-2. Clone from git if you prefer: https://github.com/pspace/BeautifyRust
+2. Clone from this repo [https://github.com/pspace/BeautifyRust](https://github.com/pspace/BeautifyRust) into `~/.config/sublime-text-3/Packages/BeautifyRust/` (or whatever is neede on your platform)
 3. If an error is encountered while processing the file or can not find `rustfmt` in path, following message `Beautify rust: can not find rustfmt in path.` is displayed. Open menu in your `Preferences -> Package settings -> BeautifyRust -> Settings - User`, and edit the settings file using below as a template:
 
 ```
